@@ -25,36 +25,41 @@ Ce projet réalise un **audit complet de la couverture mobile** dans la région 
 ## ✨ Fonctionnalités
 
 ### 🔍 Analyse de Données
+
 - ✅ Filtrage géographique précis (bbox Tanger-Tétouan)
 - ✅ Nettoyage automatique (qualité des mesures, doublons, valeurs aberrantes)
 - ✅ Classification technologique : **Class_A (4G/5G)** vs **Class_B (2G/3G)**
 - ✅ Fraîcheur temporelle : antennes actives depuis 2015+
 
 ### 🗺️ Cartographie Intelligente
+
 - ✅ Grille spatiale 1 km² avec correction cosinus pour latitude
 - ✅ Statut de couverture par maille : **Connectée** / **Fracture** / **Vide**
 - ✅ Détection d'anomalies : antennes 2G/3G isolées (hors clusters modernes)
 - ✅ Zones critiques : équipements obsolètes (< 2020)
 
 ### 📊 Business Intelligence
+
 - ✅ Comparaison des opérateurs : **IAM**, **Orange**, **Inwi**
 - ✅ Taux de modernisation 4G/5G par opérateur
 - ✅ Évolution temporelle des déploiements (2010-2026)
 - ✅ Export CSV des zones prioritaires pour intervention
 
 ### 📈 Visualisations
-| Graphique | Description |
-|-----------|-------------|
-| **Fig1** | Répartition globale des technologies (camembert) |
-| **Fig2** | Statut de couverture par maille (barres) |
-| **Fig3** | Comparaison opérateurs (barres groupées) |
-| **Fig4** | Évolution temporelle (histogramme empilé) |
+
+| Graphique | Description                                      |
+| --------- | ------------------------------------------------ |
+| **Fig1**  | Répartition globale des technologies (camembert) |
+| **Fig2**  | Statut de couverture par maille (barres)         |
+| **Fig3**  | Comparaison opérateurs (barres groupées)         |
+| **Fig4**  | Évolution temporelle (histogramme empilé)        |
 
 ---
 
 ## 🛠️ Technologies Utilisées
 
 ### Stack Python
+
 ```
 pandas          → Manipulation de données
 numpy           → Calculs géospatiaux
@@ -65,6 +70,7 @@ seaborn         → Styling des graphiques
 ```
 
 ### Infrastructure
+
 - **Jupyter Notebook** : environnement d'analyse
 - **Git** : versioning du code
 - **Netlify** : déploiement automatique de la carte HTML
@@ -74,17 +80,20 @@ seaborn         → Styling des graphiques
 ## 📦 Installation
 
 ### 1. Cloner le dépôt
+
 ```bash
 git clone https://github.com/MohammedBelfellah/tanger-telecom-audit.git
 cd tanger-telecom-audit
 ```
 
 ### 2. Installer les dépendances
+
 ```bash
 pip install pandas numpy folium scikit-learn matplotlib seaborn jupyter
 ```
 
 ### 3. Lancer le notebook
+
 ```bash
 jupyter notebook mean.ipynb
 ```
@@ -94,6 +103,7 @@ jupyter notebook mean.ipynb
 ## 🚀 Utilisation
 
 ### Exécution du pipeline complet
+
 1. **Ouvrir `mean.ipynb`** dans Jupyter
 2. **Exécuter toutes les cellules** (Kernel → Run All)
 3. **Outputs générés** :
@@ -105,6 +115,7 @@ jupyter notebook mean.ipynb
    - `Rapport_Zones_A_Moderniser.csv` : liste des antennes prioritaires
 
 ### Paramètres configurables (Cellule 2)
+
 ```python
 BBOX = {"lat_min": 34.5, "lat_max": 36.0, "lon_min": -6.5, "lon_max": -4.5}
 GRID_KM = 1.0              # Résolution de la grille
@@ -117,12 +128,14 @@ LAT_REF = 35.7             # Latitude de référence
 ## 📊 Résultats Clés
 
 ### 🎯 Métriques de Couverture
+
 - **610+ mailles** analysées dans la région
 - **~200 antennes actives** après filtres de qualité
 - **Distribution 4G/5G vs 2G/3G** : visualisée en temps réel
 - **Zones de fracture** : identifiées avec précision géographique
 
 ### 🏆 Insights Opérateurs
+
 - Taux de modernisation par MNC (Maroc Telecom, Orange, Inwi)
 - Stratégies de déploiement 4G/5G par zone
 - Antennes orphelines hors clusters modernes
@@ -134,6 +147,7 @@ LAT_REF = 35.7             # Latitude de référence
 **🔗 Carte Interactive :** [https://tanger-telecom-audit.netlify.app/](https://tanger-telecom-audit.netlify.app/)
 
 **Fonctionnalités de la carte :**
+
 - ✅ Calques activables : Zones connectées / Fractures / Points critiques
 - ✅ Zoom interactif et navigation fluide
 - ✅ Popups informatifs sur chaque antenne
@@ -145,32 +159,51 @@ LAT_REF = 35.7             # Latitude de référence
 
 ```
 tanger-telecom-audit/
-├── mean.ipynb                          # Notebook principal d'analyse
-├── morocco_towers.csv                   # Données brutes (13 MB)
-├── index.html                          # Carte interactive (déployée)
-├── Fig1_Repartition_Global.png         # Graphique 1
-├── Fig2_Statut_Mailles.png             # Graphique 2
-├── Fig3_Operateurs_Comparaison.png     # Graphique 3
-├── Fig4_Evolution_Temporelle.png       # Graphique 4
-├── Rapport_Zones_A_Moderniser.csv      # Export CSV priorités
-└── README.md                           # Ce fichier
+├── mean.ipynb                                      # Notebook principal d'analyse
+├── morocco_towers.csv                              # Données brutes (13 MB)
+├── index.html                                      # Carte interactive (déployée)
+├── Fig1_Repartition_Global.png                     # Graphique 1 : Répartition technologique
+├── Fig2_Statut_Mailles.png                         # Graphique 2 : Statut de couverture
+├── Fig3_Operateurs_Comparaison.png                 # Graphique 3 : Comparaison opérateurs
+├── Fig4_Evolution_Temporelle.png                   # Graphique 4 : Évolution temporelle
+├── Rapport_Zones_A_Moderniser.csv                  # Export CSV zones prioritaires
+├── mini_project_python_belfellah_mohammed.pdf      # Rapport complet du projet
+├── Problématiques du mini-projet (1).pdf           # Document des problématiques
+└── README.md                                       # Ce fichier
 ```
 
 ---
 
-## 🎓 Cas d'Usage
+## 📚 Documentation & Rapports
+
+### 📄 Rapports Disponibles
+
+| Document                                       | Description                                        |
+| ---------------------------------------------- | -------------------------------------------------- |
+| **mini_project_python_belfellah_mohammed.pdf** | Rapport complet du projet avec résultats détaillés |
+| **Problématiques du mini-projet (1).pdf**      | Document des problématiques et approches           |
+
+### 📊 Fichiers d'Export
+
+- **Rapport_Zones_A_Moderniser.csv** : Liste complète des antennes prioritaires pour intervention (145 antennes)
+- **Graphiques PNG** : Visualisations exportables pour présentation
+
+---
 
 ### Pour les Opérateurs Télécoms
+
 - Identifier les zones sous-couvertes (2G/3G uniquement)
 - Prioriser les investissements 4G/5G
 - Benchmarking concurrentiel
 
 ### Pour les Collectivités
+
 - Audit de fracture numérique territoriale
 - Planification d'aménagement numérique
 - Suivi de l'égalité d'accès aux réseaux
 
 ### Pour les Chercheurs
+
 - Analyse géospatiale de l'infrastructure télécommunication
 - Étude de l'évolution technologique (2010-2026)
 - Modélisation de la couverture réseau
@@ -210,16 +243,6 @@ Ce projet est sous licence **MIT**. Consultez le fichier [LICENSE](LICENSE) pour
 - Cartographie : [Folium](https://python-visualization.github.io/folium/) & [OpenStreetMap](https://www.openstreetmap.org/)
 - Machine Learning : [scikit-learn](https://scikit-learn.org/)
 - Déploiement : [Netlify](https://www.netlify.com/)
-
----
-
-## 📸 Captures d'écran
-
-### Carte Interactive
-![Carte Interactive](https://via.placeholder.com/800x400?text=Carte+Interactive+Tanger-T%C3%A9touan)
-
-### Graphiques d'Analyse
-![Graphiques](https://via.placeholder.com/800x400?text=Visualisations+Statistiques)
 
 ---
 
