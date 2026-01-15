@@ -198,9 +198,8 @@ Ce projet est sous licence **MIT**. Consultez le fichier [LICENSE](LICENSE) pour
 ## 👨‍💻 Auteur
 
 **Mohammed Belfellah**  
-📧 Email : [votre-email@example.com]  
+📧 Email : [mohammedbelfellah2@gmail.com]  
 🔗 GitHub : [@MohammedBelfellah](https://github.com/MohammedBelfellah)  
-🌐 LinkedIn : [Votre profil LinkedIn]
 
 ---
 
